@@ -1,0 +1,13 @@
+:root{
+    --brown: #1d0605e5;
+    --secondary_brown: #3b200b;
+    --light-brown: #fae2cb;
+    --yellow: #f59a1b;
+    --red: #f43127;
+    --white: #ffffff;
+    --secondary_white: #faf3f2;
+}
+html {
+    background-color: var(--secondary_white);
+}
+
