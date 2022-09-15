@@ -6,235 +6,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empire Burger</title>
     <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
 
-  <body>
+  <body ">
     <header>
-      <section>
-        <article>
-          <h1>
-            <img src="assets/icons/logo.svg" alt="" /><span>EMPIRE</span> BURGER
+      <section class="navbar flex align-xy">
+        <article class="flex align-xy">
+          <h1 class="flex">
+            <img src="assets/icons/logo.svg" class='nav-logo' alt="" />
+            <span class="opacity-ninety"><span>EMPIRE</span> BURGER</span>
           </h1>
         </article>
-        <nav>
-          <section>
-            <a href="#home">Home</a>
-            <a href="#promocao">Promoção</a>         
-            <a href="#cardapio">Cardapio</a>
-            <a href="#comentarios">Comentario</a>
-            <a href="#contato">Contato</a>
-          </section>
-          <section>
-            <a href="#" target="_blank">
-                <img src="assets/icons/ifood-nav.svg" alt="">
-            </a>
-            <a href="#" target="_blank">
-                <img src="assets/icons/instagram-nav.svg" style="color: black;" alt="">
-            </a>
-            <a href="#" target="_blank">
-                <img src="assets/icons/whatsapp-nav.svg" alt="">
-                Contato
-            </a>
-        </section>
+        <nav class="flex align-xy">
+            <section>
+                <a href="#home">Home</a>
+                <a href="#promocao">Promoção</a>         
+                <a href="#cardapio">Cardapio</a>
+                <a href="#comentarios">Comentario</a>
+                <a href="#contato">Contato</a>
+            </section>
+            <section class="nav-social flex align-xy">
+                <a href="#" target="_blank">
+                    <img src="assets/icons/ifood-nav.svg" alt="ifood logo"
+                    class="nav-social-logo">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="assets/icons/instagram-nav.svg" alt="instagram logo"
+                    class="nav-social-logo"
+                    >
+                </a>
+                <div class="spin"></div>
+                <a href="#" target="_blank" class="contact-btn">
+                    <img src="assets/icons/whatsapp-nav.svg" alt="" class="nav-social-logo">
+                    Contato
+                </a>
+            </section>
         </nav>
       </section>
     </header> 
       <main>
-        <section id="home">
+        <section id="home" class="home-container">
             <article>
-                <div>
-                    <p>Uma nova experiência!</p>
-                    <h2>KING <span>BURGER</span></h2>
-                    <p>Para quem tem um <span>Apetite de um REI!</span></p>
-                    <span>Comprar Agora </span>
+                <div class="home-content flex column">
+                    <p class="opacity-ninety">Uma nova experiência!</p>
+                    <h2 id="titulo-home">KING <span>BURGER</span></h2>
+                    <p>Para quem tem um <span class="yellow-bg">Apetite de um REI!</span></p>
+                    <a href="#"><span class="red-btn">Comprar Agora</span></a>
                 </div>
-                <div>
-                    <div>
+                <div class="flex align-xy card">
+                    <div class="flex card-item">
                         <img src="assets/icons/burger.svg" alt="">
-                        <h3>ARTESANAL</h3>
-                        <p>Nossas receitas são feitas com todo cuidado</p></div>
-                    <div>
+                        <div>
+                            <h3>ARTESANAL</h3>
+                            <p>Nossas receitas são <br> feitas com todo cuidado</p>
+                        </div>
+                    </div>  
+                    <div class="spin"></div>                   
+                    <div class="flex card-item">
                         <img src="assets/icons/headset.svg" alt="">
-                        <h3>ATENDIMENTO</h3>
-                        <p>Totalmente personalizado</p></div>
-                    <div>
+                        <div>
+                            <h3>ATENDIMENTO</h3>
+                            <p>Totalmente personalizado</p>
+                        </div>
+                    </div>
+                    <div class="spin"></div>
+                    <div class="flex card-item">
                         <img src="assets/icons/delivery.svg" alt="">
-                        <h3>DELIVERY SPEED</h3>
-                        <p>Entregamos menos de 45 minutos</p>
+                        <div>
+                            <h3>DELIVERY SPEED</h3>
+                            <p>Entregamos menos de <br> 45 minutos</p>
+                        </div>
                     </div>
                 </div>
             </article>
         </section>
-        <section id="promocao">
+        <section id="promocao" class="flex align-xy promocao-main-container">
             <article>
-                <h2>OFERTAS ESPECIAIS</h2>
-                <p>Aproveite todas as nossas ofertas, fiquem de olhos abertos, porque sempre estamos mudando o nosso cardapio.</p>
                 <div>
-                    <div>
+                    <h2 class="opacity-ninety">OFERTAS ESPECIAIS</h2>
+                    <p class="opacity-sixtynine">Aproveite todas as nossas ofertas, fiquem de olhos abertos, porque sempre estamos mudando o nosso cardapio.</p>
+                </div>
+                <div class="promocao-grid">
+                    <div  class="oferta-um">
+                        <img src="assets/ofertas/oferta-1.png" alt="Burguer Imperial + batata de R$49,50 por R$35,99">
                         <div>
-                            <p>BURGUER IMPERIAL+BATATA</p>
-                            <p>250kg</p> 
+                            <h3 id="titulo-oferta-um" class="opacity-ninety">BURGUER IMPERIAL+BATATA</h3>
+                            <p class="opacity-sixtynine">250kg</p> 
                         </div>
-                        <div>
-                            <p>Apenas</p>
-                            <p>HOJe</p> 
+                        <div class="flex column">
+                            <p class="opacity-sixtynine">Apenas</p>
+                            <p class="hoje">HOJE</p> 
                         </div>
-                        <img src="assets/ofertas/oferta-1.png" alt="">
+                        
                     </div>
-                    <div>
-                        <div>
-                            <p>BATATA</p>
-                            <p>150kg</p> 
+                    <div class="oferta-dois">
+                        <img src="assets/ofertas/oferta-2.png" alt="Batata de R$15,50 por R$11,99">
+                        <div class="small-oferta">
+                            <h3 class="opacity-ninety">BATATA</h3>
+                            <p class="opacity-sixtynine">150kg</p> 
                         </div>
-                        <img src="assets/ofertas/oferta-2.png" alt="">
                     </div>
-                    <div>
-                        <div>
-                            <p>SORVETE</p>
-                            <p>50kg</p>
+                    <div class="oferta-tres">
+                        <img src="assets/ofertas/oferta-3.png" alt="Sorvete de R$3,50 por R$2,50">
+                        <div class="small-oferta">
+                            <h3 class="opacity-ninety">SORVETE</h3>
+                            <p class="opacity-sixtynine">50kg</p>
                         </div>
-                        <img src="assets/ofertas/oferta-3.png" alt="">
                     </div>
                 </div>
-                <div>
+                <div class="flex">
                     <img src="assets/icons/timer.svg" alt="">
+                    <div class="spin"></div>
                     <div>
-                        <p>HORÁRIO DE FUNCIONAMENTO</p>
-                        <p>Segunda-feira a sexta-feira: 17h00 - 23h00</p>
-                        <p>Sabado a Domíngo: 18h30 - 23h00</p>
+                        <h3 class="opacity-sixtynine">HORÁRIO DE FUNCIONAMENTO</h3>
+                        <p class="opacity-ninety">Segunda-feira a sexta-feira: 17h00 - 23h00</p>
+                        <p class="opacity-ninety">Sabado a Domíngo: 18h30 - 23h00</p>
                     </div>
                 </div>
-                <div>
+                <div class="flex column ">
                     <p>Não esqueça de marcar a gente no Instagram:</p>
                     <p>#EMPIREBURGER</p>
                 </div>
             </article>
         </section>
-        <section id="cardapio">
+        <section id="cardapio" class="cardapio-main-container">
             <article>
                 <div>
-                    <h2>ESCOLHA O SEU COMBO<br> IMPERIAL, <span>PEÇA AGORA!</span></h2>
-                    <p>Temos vários tipos de pratos para a nossa realeza, fique esperto porque temos sempre  promoção!</p>
-                    <span>Ver Cardápio Completo</span>
+                    <div class="flex column">
+                        <h2>ESCOLHA O SEU COMBO<br> IMPERIAL,<span class="yellow-bg"> PEÇA AGORA!</span></h2>
+                        <p>Temos vários tipos de pratos para a nossa realeza, fique <br> esperto porque temos sempre  promoção!</p>
+                        <span class="red-btn">Ver Cardápio Completo</span>
+                    </div>
                 </div>
-                <div>
+                <div class="flex column">
                     <h2>CARDÁPIO IMPERIAL | BURGER</h2>
-                    <div> 
-                       <p>CLASSIC BURGER......................................................................... <span>R$49,99</span></p>
-                       <p>Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
+                    <div>
+                        <div class="flex nome-valor-prato">
+                            <p>CLASSIC BURGER</p>
+                            <div class="spin"></div>
+                            <p>R$49,99</p>
+                        </div>
+                       <p class="info-prato opacity-ninety">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
                     </div>
                     <div>
-                        <p>SPECIAL BIG BURGER................................................................. <span>R$49,99</span></p>
-                        <p>Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
+                        <div class="flex nome-valor-prato">
+                            <p>CLASSIC BURGER</p>
+                            <div class="spin"></div>
+                            <p>R$49,99</p>
+                        </div>
+                        <p class="info-prato opacity-ninety">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
                     </div>
                     <div>   
-                        <p>SPECIAL BIG BURGER................................................................. <span>R$49,99</span></p>
-                        <p>Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
+                        <div class="flex nome-valor-prato">
+                            <p>CLASSIC BURGER</p>
+                            <div class="spin"></div>
+                            <p>R$49,99</p>
+                        </div>
+                        <p class="info-prato opacity-ninety">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
                     </div>
                     <div> 
-                        <p>MEXICAN BURGER...................................................................... <span>R$49,99</span></p>
-                        <p>Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
+                        <div class="flex nome-valor-prato">
+                            <p>CLASSIC BURGER</p>
+                            <div class="spin"></div>
+                            <p>R$49,99</p>
+                        </div>
+                        <p class="info-prato opacity-ninety">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p> 
                     </div>
                 </div>
-                <div>
-                    <img src="assets/card-woman-eating.png" alt="" >
-                    <div>    
-                        <h2>ATENDIMENTO <br><span>PERSONALIZADO</span></h2>
+                <div class="flex align-xy">
+                    <img src="assets/card-woman-eating.png" alt="" style="float:left;">
+                    <div class="flex column">    
+                        <h2 class="opacity-ninety">ATENDIMENTO <br><span class="yellow-bg">PERSONALIZADO</span></h2>
                         <p>Todos os nossos clientes são tratados como rei e rainha, com a nossa colunaria artesanal.</p>
-                        <span>Cardápio Imperial</span>
+                        <span class="red-btn">Cardápio Imperial</span>
                     </div>
-                </div>     
+                </div>
+                <div class="flex align-xy">
+                    <div class="spin"></div>
+                </div>
             </article>
-            <section id="comentarios">
-                <article>
-                    <h2>NOSSA REALEZA</h2>
+        </section>
+        <section id="comentarios" class="comentarios-main-container flex align-xy">
+            <article>
+                <div>
+                    <h2 class="opacity-ninety">NOSSA REALEZA</h2>
                     <p>A satisfação de nossos clientes em primeiro lugar!</p>
-                    <div>
-                        <div>
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin.”</p>
-                            <div>
-                                <img src="https://api.brchallenges.com/avatars/person-3.jpg" alt="">
-                                <div>
-                                    <p>CARLA GOMES</p>
-                                    <p>23 anos • Designer</p>
-                                </div>
+                </div>
+                <div class="flex align-xy">
+                    <div class="card-comentario">
+                        <p class="opacity-ninety">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin.”</p>
+                        <div class="flex">
+                            <img src="https://api.brchallenges.com/avatars/person-3.jpg" alt="">
+                            <div class="flex column">
+                                <p class="opacity-ninety">CARLA GOMES</p>
+                                <p class="opacity-sixtynine">23 anos • Designer</p>
                             </div>
                         </div>
                     </div>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2>PUBLICAÇÕES DO INSTAGRAM</h2>
-                    <p>Todos os nossos clientes são tratados como rei e rainha, com a nossa colunaria artesanal.</p>
-                    <div>
-                        <img src="assets/instaphotos.png" alt="">
-                        <p>
-                            • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER 
-                        </p>
-                    </div>
-                </article>
-            </section>
-            <section id="contato">
-                <article>
-                    <div>
-                        <img src="assets/card-phone.png" alt="">
-                    </div>
-                    <div>
-                        <h2>NOSSAS ENTREGAS</h2>
-                        <div>
-                            <img src="assets/icons/whatsapp.svg" alt="">
-                            <span>
-                                <p>WHATSAPP</p>
-                                <p>Vamos direto ao ponto, sem perder tempo!</p>
-                            </span>
-                        </div>
-                        <div>
-                            <img src="assets/icons/delivery.svg" alt="">
-                            <span>
-                                <p>ENTREGA</p>
-                                <p>Entregamos menos de 45 minutos na porta da sua casa!</p>
-                            </span>
-                        </div>
-                        <div>
-                            <img src="assets/icons/ice-cream.svg" alt="">
-                            <span>
-                                <p>SOBREMESA</p>
-                                <p>Pedidos assima de 100 reais, ganham brindes.</p>
-                            </span>
-                        </div>
-                        <div>
-                            <img src="assets/icons/ifood-about.svg" alt="">
-                            <span>
-                                <p>IFOOD</p>
-                                <p>Nossa loja é Top 1 da região!</p>
-                            </span>
+                    <div class="card-comentario">
+                        <p class="opacity-ninety">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin.”</p>
+                        <div class="flex">
+                            <img src="https://api.brchallenges.com/avatars/person-3.jpg" alt="">
+                            <div class="flex column">
+                                <p class="opacity-ninety">CARLA GOMES</p>
+                                <p class="opacity-sixtynine">23 anos • Designer</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="card-comentario">
+                        <p class="opacity-ninety">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin.”</p>
+                        <div class="flex">
+                            <img src="https://api.brchallenges.com/avatars/person-3.jpg" alt="">
+                            <div class="flex column">
+                                <p class="opacity-ninety">CARLA GOMES</p>
+                                <p class="opacity-sixtynine">23 anos • Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex align-xy carrosel-main-container">
+                    <div class="carrossel flex">
+                        <div class="spin current-carrossel"></div>
+                        <div class="spin"></div>
+                        <div class="spin"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="instagram" class="instagram-main-container">
+            <article class="flex column align-xy">
+                <h2 class="opacity-ninety">PUBLICAÇÕES DO INSTAGRAM</h2>
+                <p>Todos os nossos clientes são tratados como rei e rainha, com a nossa colunaria artesanal.</p>
+                <div class="flex column">
+                    <img src="assets/instaphotos.png" alt="">
+                    <p class="marquee opacity-ninety">
+                        • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER • #EMPIREBURGER
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section id="contato" class="contato-main-container flex column align-xy">
+            <article class="flex column align-xy">
+                <div class="flex align-xy">
+                    <img src="assets/card-phone.png" alt="" class="main-image-contato">
                     <div>
-                        <img src="assets/icons/phone.svg" alt="">
-                        <span>
-                            <h2>FAÇA O SEU PEDIDO AGORA MESMO!</h2>
-                            <p>Venha saborear a melhor experiência de hamburguenses artesanal do Empires Burger, com temática medieval!</p>
+                    <h2 class="opacity-ninety">NOSSAS ENTREGAS</h2>
+                    <div class="flex card-contato">
+                        <img src="assets/icons/whatsapp.svg" alt="">
+                    <div class="spin"></div>
+                        <span class="flex column">
+                            <h3 class="opacity-ninety">WHATSAPP</h3>
+                            <p class="opacity-sixtynine">Vamos direto ao ponto, sem perder tempo!</p>
                         </span>
-                        <span>SOLICITAR PEDIDO</span>
                     </div>
-                </article>
-            </section>
-            <section id="localizacao">
-                <article>
-                    <h2>ONDE FICARÁ NOSSO CASTELO</h2>
-                    <p>Estaremos de portas abertas para a nossa realeza.</p>
-                    <div id="map"></div>
-                </article>
-            </section>
+                    <div class="flex card-contato">
+                        <img src="assets/icons/delivery.svg" alt="">
+                        <div class="spin"></div>
+                        <span class="flex column">
+                            <h3 class="opacity-ninety">ENTREGA</h3>
+                            <p class="opacity-sixtynine">Entregamos menos de 45 minutos na porta da sua casa!</p>
+                        </span>
+                    </div>
+                    <div class="flex card-contato">
+                        <img src="assets/icons/ice-cream.svg" alt="">
+                        <div class="spin"></div>
+                        <span class="flex column">
+                            <h3 class="opacity-ninety">SOBREMESA</h3>
+                            <p class="opacity-sixtynine">Pedidos assima de 100 reais, ganham brindes.</p>
+                        </span>
+                    </div>
+                    <div class="flex card-contato">
+                        <img src="assets/icons/ifood-about.svg" alt="">
+                        <div class="spin"></div>
+                        <span class="flex column">
+                            <h3 class="opacity-ninety">IFOOD</h3>
+                            <p class="opacity-sixtynine">Nossa loja é Top 1 da região!</p>
+                        </span>
+                    </div>
+                </div>
+                </div>
+                <div class="flex">
+                    <div class="red-card-image-container flex align-xy">
+                        <img src="assets/icons/phone.svg" alt="">
+                    </div>
+                    <div class="spin"></div>
+                    <span>
+                        <h2 class="opacity-ninety">FAÇA O SEU PEDIDO AGORA MESMO!</h2>
+                        <p class="opacity-ninety">Venha saborear a melhor experiência de hamburguenses artesanal<br> do <strong>Empires Burger</strong>, com temática medieval!</p>
+                    </span>
+                    <span>SOLICITAR PEDIDO</span>
+                </div>
+            </article>
+        </section>
+        <section id="localizacao" class="localizacao-main-container">
+            <article class="flex column align-xy">
+                <h2 class="opacity-ninety">ONDE FICARÁ NOSSO CASTELO</h2>
+                <p class="opacity-sixtynine">Estaremos de portas abertas para a nossa realeza.</p>
+                <div id="map"></div>
+            </article>
         </section>
       </main>
-      <footer>
-        <div>
-            <div>
-                <img src="assets/logo.svg" alt="">
+      <footer class="flex column align-xy footer-main-container">
+        <div class="flex">
+            <div class="flex footer-items-container">
+            <div class="flex">
+                <img src="assets/icons/logo-footer.svg" alt="">
                 <p><span>EMPIRE</span> BURGER</p>
             </div>
             <div>
@@ -244,11 +324,13 @@
                 <a href="#contato">Sobre</a>
             </div>
             <div>
-                <a href="#"><img src="assets/icons/ifood-footer.svg" alt=""></a>
-                <a href="#"><img src="assets/icons/instagram-footer.svg" alt=""></a>
+                <a href="#"><img src="assets/icons/ifood-footer.svg" alt="ifood logo"></a>
+                <a href="#"><img src="assets/icons/instagram-footer.svg" alt="instagram logo"></a>
             </div>
         </div>
-        <p>2022 © EmpireBurger. <span>Todos os direitos reservados.</span>
+        </div>
+        <div class="spin"></div>
+        <p class="opacity-sixtynine">2022 © EmpireBurger. <span>Todos os direitos reservados.</span>
         </p>
       </footer>
       <script src="js/main.js"></script>
