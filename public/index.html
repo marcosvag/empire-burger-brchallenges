@@ -22,7 +22,8 @@
           </h1>
         </article>
         <nav class="flex align-xy">
-            <section>
+            <span hidden id="menu-hamburguer" class="menu-hamburguer"><img src="assets/icons/menu.svg" alt=""></span>
+            <section class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#promocao">Promoção</a>         
                 <a href="#cardapio">Cardapio</a>
@@ -50,7 +51,7 @@
     </header> 
       <main>
         <section id="home" class="home-container">
-            <article>
+            <article class="flex column align-xy">
                 <div class="home-content flex column">
                     <p class="opacity-ninety">Uma nova experiência!</p>
                     <h2 id="titulo-home">KING <span>BURGER</span></h2>
@@ -61,31 +62,31 @@
                     <div class="flex card-item">
                         <img src="assets/icons/burger.svg" alt="">
                         <div>
-                            <h3>ARTESANAL</h3>
-                            <p>Nossas receitas são <br> feitas com todo cuidado</p>
+                            <h3 class="opacity-ninety">ARTESANAL</h3>
+                            <p class="opacity-sixtynine">Nossas receitas são <br> feitas com todo cuidado</p>
                         </div>
                     </div>  
                     <div class="spin"></div>                   
                     <div class="flex card-item">
                         <img src="assets/icons/headset.svg" alt="">
                         <div>
-                            <h3>ATENDIMENTO</h3>
-                            <p>Totalmente personalizado</p>
+                            <h3 class="opacity-ninety">ATENDIMENTO</h3>
+                            <p class="opacity-sixtynine">Totalmente personalizado</p>
                         </div>
                     </div>
                     <div class="spin"></div>
                     <div class="flex card-item">
                         <img src="assets/icons/delivery.svg" alt="">
                         <div>
-                            <h3>DELIVERY SPEED</h3>
-                            <p>Entregamos menos de <br> 45 minutos</p>
+                            <h3 class="opacity-ninety">DELIVERY SPEED</h3>
+                            <p class="opacity-sixtynine">Entregamos menos de <br> 45 minutos</p>
                         </div>
                     </div>
                 </div>
             </article>
         </section>
         <section id="promocao" class="flex align-xy promocao-main-container">
-            <article>
+            <article class="flex column">
                 <div>
                     <h2 class="opacity-ninety">OFERTAS ESPECIAIS</h2>
                     <p class="opacity-sixtynine">Aproveite todas as nossas ofertas, fiquem de olhos abertos, porque sempre estamos mudando o nosso cardapio.</p>
@@ -104,14 +105,14 @@
                         
                     </div>
                     <div class="oferta-dois">
-                        <img src="assets/ofertas/oferta-2.png" alt="Batata de R$15,50 por R$11,99">
+                        <img src="assets/ofertas/oferta-2.png" alt="Batata de R$15,50 por R$11,99" class="small-oferta-image">
                         <div class="small-oferta">
                             <h3 class="opacity-ninety">BATATA</h3>
                             <p class="opacity-sixtynine">150kg</p> 
                         </div>
                     </div>
                     <div class="oferta-tres">
-                        <img src="assets/ofertas/oferta-3.png" alt="Sorvete de R$3,50 por R$2,50">
+                        <img src="assets/ofertas/oferta-3.png" alt="Sorvete de R$3,50 por R$2,50" class="small-oferta-image">
                         <div class="small-oferta">
                             <h3 class="opacity-ninety">SORVETE</h3>
                             <p class="opacity-sixtynine">50kg</p>
@@ -119,26 +120,28 @@
                     </div>
                 </div>
                 <div class="flex">
-                    <img src="assets/icons/timer.svg" alt="">
-                    <div class="spin"></div>
-                    <div>
-                        <h3 class="opacity-sixtynine">HORÁRIO DE FUNCIONAMENTO</h3>
-                        <p class="opacity-ninety">Segunda-feira a sexta-feira: 17h00 - 23h00</p>
-                        <p class="opacity-ninety">Sabado a Domíngo: 18h30 - 23h00</p>
+                    <div class="flex">
+                        <img src="assets/icons/timer.svg" alt="" class="small-oferta-image">
+                        <div class="spin"></div>
+                        <div>
+                            <h3 class="opacity-sixtynine">HORÁRIO DE FUNCIONAMENTO</h3>
+                            <p class="opacity-ninety">Segunda-feira a sexta-feira: 17h00 - 23h00</p>
+                            <p class="opacity-ninety">Sabado a Domíngo: 18h30 - 23h00</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex column ">
-                    <p>Não esqueça de marcar a gente no Instagram:</p>
-                    <p>#EMPIREBURGER</p>
+                    <div class="flex column ">
+                        <p class="opacity-sixtynine">Não esqueça de marcar a gente no Instagram:</p>
+                        <p>#EMPIREBURGER</p>
+                    </div>
                 </div>
             </article>
         </section>
         <section id="cardapio" class="cardapio-main-container">
             <article>
-                <div>
+                <div class="flex align-xy">
                     <div class="flex column">
                         <h2>ESCOLHA O SEU COMBO<br> IMPERIAL,<span class="yellow-bg"> PEÇA AGORA!</span></h2>
-                        <p>Temos vários tipos de pratos para a nossa realeza, fique <br> esperto porque temos sempre  promoção!</p>
+                        <p class="opacity-sixtynine">Temos vários tipos de pratos para a nossa realeza, fique <br> esperto porque temos sempre  promoção!</p>
                         <span class="red-btn">Ver Cardápio Completo</span>
                     </div>
                 </div>
@@ -191,7 +194,7 @@
             </article>
         </section>
         <section id="comentarios" class="comentarios-main-container flex align-xy">
-            <article>
+            <article class="flex column">
                 <div>
                     <h2 class="opacity-ninety">NOSSA REALEZA</h2>
                     <p>A satisfação de nossos clientes em primeiro lugar!</p>
@@ -240,7 +243,7 @@
         <section id="instagram" class="instagram-main-container">
             <article class="flex column align-xy">
                 <h2 class="opacity-ninety">PUBLICAÇÕES DO INSTAGRAM</h2>
-                <p>Todos os nossos clientes são tratados como rei e rainha, com a nossa colunaria artesanal.</p>
+                <p class="opacity-sixtynine">Todos os nossos clientes são tratados como rei e rainha, com a nossa colunaria artesanal.</p>
                 <div class="flex column">
                     <img src="assets/instaphotos.png" alt="">
                     <p class="marquee opacity-ninety">
