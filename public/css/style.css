@@ -420,7 +420,7 @@ h3:not(#titulo-oferta-um),
     margin: 0 30px 0 30px;
 }
 
-.cardapio-main-container article>div:nth-of-type(2)>h2 {
+.cardapio-main-container article>div:nth-of-type(2)>div h2 {
     color: var(--yellow);
     font-size: 2em;
     margin-bottom: 15px;
@@ -925,4 +925,184 @@ footer .spin,
     }
 }
 
-@media(max-width: 767.98px) {}
+@media(max-width: 767.98px) {
+    :root {
+        font-size: 14px;
+    }
+
+    nav {
+        margin: 0 1em 0 auto;
+    }
+
+    .navbar h1 {
+        margin: 0 1.3em;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        display: contents;
+        cursor: pointer;
+    }
+
+    .menu-hamburguer img {
+        background-color: rgba(29, 6, 5, 0.15);
+        padding: 5px;
+        border-radius: 3px;
+        margin-right: 1em;
+    }
+
+    .nav-links,
+    .nav-social {
+        display: none;
+    }
+
+    .home-container {
+        background-image: url('../assets/banner-hero\ -\ Copy.png');
+    }
+
+    .home-container article {
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    .home-content {
+        align-self: unset;
+        justify-content: unset;
+        top: 5rem;
+        left: 3%;
+    }
+
+    .home-content :last-child {
+        margin-left: unset;
+    }
+
+    .home-container .card {
+        width: max-content;
+        flex-direction: column;
+        margin: 0 auto;
+        top: -8em;
+        padding-top: 1em;
+    }
+
+    .card-item {
+        justify-content: center;
+    }
+
+    .card-item div {
+        width: 150px;
+        justify-content: center;
+    }
+
+    .card .spin {
+        border-left: unset;
+        height: unset;
+        width: 85%;
+        margin: 15px 0;
+        border-bottom: 2px solid rgba(73, 46, 21, 0.15);
+    }
+
+    .promocao-main-container {
+        margin: 260px 0 64px;
+    }
+
+    .promocao-main-container article {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .promocao-grid,
+    .card-item div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .oferta-um,
+    .oferta-dois,
+    .oferta-tres {
+        width: 27.143em;
+        height: 14.571em;
+    }
+
+    .oferta-um div:last-of-type {
+        top: -60%;
+        left: 73%;
+    }
+
+    .promocao-main-container article> :last-child {
+        width: 27.143em;
+        flex-direction: column;
+        height: unset;
+    }
+
+    .promocao-main-container article> :nth-child(3)>div:first-of-type {
+        padding: 0.571em;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0 0 4.571em 0;
+    }
+
+    .promocao-main-container article> :nth-child(3) img {
+        margin: 0;
+        width: 5.214em;
+        height: 5.214em;
+    }
+
+    .promocao-main-container article> :nth-child(3) h3,
+    .promocao-main-container article> :last-child p:first-of-type {
+        font-size: 1.286em;
+    }
+
+    .promocao-main-container article> :last-child>div:last-of-type {
+        margin: 0;
+        text-align: center;
+    }
+
+    .promocao-main-container article> :nth-child(3)>div:first-of-type p {
+        font-size: 1em;
+    }
+
+    .promocao-main-container article> :last-child>div:last-of-type p:last-of-type {
+        font-size: 2.929em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        font-size: 12px;
+    }
+
+    .home-container,
+    .home-content {
+        height: 855.46px;
+    }
+
+    .home-container {
+        background-image: url('../assets/banner-menu-mobile.png');
+    }
+
+    .home-content {
+        font-size: 15.6px;
+    }
+
+    .home-content {
+        top: 6rem;
+    }
+
+    .cardapio-main-container article>div:first-of-type {
+        background-image: url('../assets/cardapio-mobile.png');
+        height: 19.833em;
+    }
+
+    .promocao-main-container article>div:first-of-type,
+    .oferta-um,
+    .oferta-dois,
+    .oferta-tres,
+    .promocao-main-container article> :last-child,
+    .cardapio-main-container article>div:nth-of-type(3) img,
+    .main-image-contato,
+    .contato-main-container article>div:first-of-type>div,
+    .contato-main-container article>div:nth-of-type(2),
+    .instagram-main-container article>p:first-of-type {
+        max-width: 85vw;
+    }
+}
