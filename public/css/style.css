@@ -1019,7 +1019,7 @@ footer .spin,
         align-items: center;
         gap: 5px;
     }
-    #nav-items.active .contact-btn{
+    #nav-items .contact-btn{
         margin: 0;
     }
     .menu-hamburguer img {
