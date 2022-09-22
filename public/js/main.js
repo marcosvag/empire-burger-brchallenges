@@ -55,13 +55,11 @@ function showHideMenuItems (){
 })();
 
 function formatComentarios(data){
-    let comentariosByDiv = Array.from({length: Math.ceil(data.length / 3)}, () => '');
     let itensCarrossel = Array.from({length: Math.ceil(data.length / 3)}, (e, i) => `<div class="spin carrossel-item${i === 0 ? " active" : ''} cr-${i}"></div>`);
-    let contador = 0;
-    let subContador = 0;
+
     let template = '';
     data.forEach((el, i) => {
-        template += `<div class="card-comentario">
+        template += `<div class="card-comentario flex column">
         <p class="opacity-ninety">“${el['testimonial']}”</p>
         <div class="flex">
             <img src="${el['image']}" alt="">
@@ -71,32 +69,24 @@ function formatComentarios(data){
             </div>
         </div>
         </div>`;
-        subContador++;
-        if(data.length - 1 == i) {
-            comentariosByDiv[contador] += `<div class="comentarios-container flex${contador === 0 ? ' active' : ''} cr-${contador}">${template}</div>`;
-        } else if(subContador === 3) {
-            subContador = 0;
-            comentariosByDiv[contador] += `<div class="comentarios-container flex${contador === 0 ? ' active' : ''} cr-${contador}">${template}</div>`;
-            template = '';
-            contador++;
-        }
-        });
 
-        renderComentarios(comentariosByDiv, itensCarrossel)
+        });
+        template = `<div class="comentarios-container flex">${template}</div>`
+        renderComentarios(template, itensCarrossel)
 }
 
 function renderComentarios(comentarios, carrossel) {
-    const containerComentarios = document.querySelector('#comentarios article>div:nth-of-type(2)');
+    const containerComentarios = document.querySelector('#container-c');
     const carrosselContainer = document.querySelector('.carrossel');
 
-    comentarios.forEach(el => containerComentarios.innerHTML += el);
+    containerComentarios.innerHTML += comentarios;
     carrossel.forEach(el => carrosselContainer.innerHTML += el);
 
     itemsCarrossel = document.querySelectorAll('.carrossel-item');
     controllersCarrossel = document.querySelectorAll('.controller');
     
-    itemsCarrossel.forEach(item => item.addEventListener('click', moveCarrosel))
-    controllersCarrossel.forEach(item => item.addEventListener('click', moveCarrosel));
+    itemsCarrossel.forEach(item => item.addEventListener('click', moveCarousel))
+    controllersCarrossel.forEach(item => item.addEventListener('click', moveCarousel));
 }
 
 function renderLocalDateTime(data){
@@ -121,32 +111,45 @@ function renderCardapio(data) {
     })
 }
 
-function moveCarrosel(e){
-    const elementTarget = e.target.classList;
+function moveCarousel(e) {
+    const mainContainerComentarios = document.querySelector('#main-container-comentarios');
+    const containerC = document.querySelector('#container-c');
+    const containerComentarios = document.querySelector('.comentarios-container');
+    const comentarios = document.querySelector('.card-comentario');
+    const carouselContainer = document.querySelector('.carrossel');
+    const currentCarouselItemActive = document.querySelector('.carrossel-item.active');
 
-    const currentComentariosContainerActive = document.querySelector('.comentarios-container.active');
-    const currentCarrosselActive = document.querySelector('.carrossel-item.active');
+    const getCarouselItemNumber = (e) => Number(e.classList.toString().match(/\d/)[0])
+    
+    let currentCarouselItemActiveClass;  
+    if(carouselContainer){
+        currentCarouselItemActiveClass = getCarouselItemNumber(currentCarouselItemActive);
+    }
 
-    if(elementTarget.contains('controller')) {
-        let current = Number(currentComentariosContainerActive.classList.toString().match(/\d/)[0]);
-        let maxCurrent = document.querySelectorAll('.comentarios-container').length - 1;
-        if(e.target.id == 'right') current < maxCurrent ? current++ : current = 0; 
-        if(e.target.id == 'left') current > 0 ? current-- : current = maxCurrent;
+    const maxWidth = containerC.offsetWidth - mainContainerComentarios.offsetWidth;
+    const oneComment = comentarios.offsetWidth + parseFloat(window.getComputedStyle(containerComentarios).marginLeft);
+    const move =  oneComment * Math.floor(mainContainerComentarios.offsetWidth / oneComment);
+    const element = e.target;
+
+    if(element.classList.contains('controller')) {
+
         
-        currentCarrosselActive.classList.remove('active');
-        currentComentariosContainerActive.classList.remove('active');
-
-        document.querySelector(`.comentarios-container.cr-${current}`).classList.add('active');
-        document.querySelector(`.carrossel-item.cr-${current}`).classList.add('active');
-
-    }else if(!elementTarget.contains('active')){
-        const targetClass = elementTarget[elementTarget.length -1];
-        const comentariosContainerTarget = document.querySelector(`.comentarios-container.${targetClass}`);
+        if(element.id === 'right') mainContainerComentarios.scrollLeft < maxWidth ? (mainContainerComentarios.scrollLeft += move, currentCarouselItemActiveClass++ ) : ( mainContainerComentarios.scrollLeft = 0, currentCarouselItemActiveClass = 0);
+        if(element.id === 'left') mainContainerComentarios.scrollLeft > 0 ? (mainContainerComentarios.scrollLeft -= move, currentCarouselItemActiveClass-- ): ( mainContainerComentarios.scrollLeft =  maxWidth, currentCarouselItemActiveClass = carouselContainer.childElementCount - 1);
         
-        currentCarrosselActive.classList.remove('active');
-        currentComentariosContainerActive.classList.remove('active');
+        const nextCarousel = document.querySelector(`.carrossel-item.cr-${currentCarouselItemActiveClass}`)
         
-        elementTarget.add('active');
-        comentariosContainerTarget.classList.add('active');
+        if(nextCarousel) {
+            currentCarouselItemActive.classList.remove('active');
+            nextCarousel.classList.add('active');
+        }
+    
+    }else if(element.classList.contains('carrossel-item') && !element.classList.contains('active')){
+
+        mainContainerComentarios.scrollLeft = ( move * getCarouselItemNumber(element) );
+
+        currentCarouselItemActive.classList.remove('active');
+        element.classList.add('active');
+
     }
 }
