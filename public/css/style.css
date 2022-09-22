@@ -9,6 +9,7 @@
     --family_one: 'Lato', sans-serif;
     --family_two: 'Lilita One', cursive;
     font-family: var(--family_one);
+    scroll-behavior: smooth;
 }
 
 .flex {
@@ -508,21 +509,6 @@ h3:not(#titulo-oferta-um),
     scrollbar-width: none;  /* Firefox */
   }
 
-#left, #right{
-    position: absolute;
-    width: 50%;
-    height: 160px;
-    z-index: 1;
-    cursor: pointer;
-}
-
-#left {
-    right: 50%;
-}
-
-#right {
-    left: 50%;
-}
 
 .comentarios-main-container h2 {
     font-size: 1.938em;
@@ -560,6 +546,11 @@ h3:not(#titulo-oferta-um),
 
 .carrossel .carrossel-item.active{
     border-top-color: #FFAD0D;
+}
+
+#main-container-comentarios > * {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .comentarios-main-container .card-comentario>p {
@@ -899,7 +890,7 @@ footer .spin,
     .comentarios-main-container .card-comentario {
         width: 250px;
     }
-    #left, #right, .comentarios-main-container .card-comentario {
+   .comentarios-main-container .card-comentario {
         height: 143px;
     }
 
@@ -989,11 +980,27 @@ footer .spin,
     .navbar h1 {
         margin: 0 1.3em;
     }
+    #nav-items {
+        transition: 3s;
+        -webkit-transition: 3s;
+        position: fixed;
+        display: flex; 
+        flex-direction: column;
+        font-size: 16px;
+        right: 0;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        top: -100%;
+    }
+
     #nav-items.active{
-        transform: translateY(0);
+        transition: 1s;
+        -webkit-transition: 1s;
         top: 62px;
     }
-    #nav-items.active:before {
+    #nav-items:before {
         transition: all 0.3s ease-in-out;
         content:"";
         position:absolute;
@@ -1005,7 +1012,7 @@ footer .spin,
         right:0;
         bottom:0;
     }
-      #nav-items.active .nav-links, #nav-items.active .nav-social{
+      .nav-links, .nav-social{
         width: max-content;
         margin: 10px 0;
         flex-direction: column;
@@ -1052,20 +1059,6 @@ footer .spin,
     }
     .menu-hamburguer.active .barra:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-    #nav-items {
-        transition: 0.3s;
-        -webkit-transition: 0.3s;
-        display: flex; 
-        flex-direction: column;
-        font-size: 16px;
-        position: fixed;
-        right: 0;
-        top: -100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        z-index: -1;
     }
 
     .home-container {

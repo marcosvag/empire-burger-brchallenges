@@ -1,13 +1,13 @@
 const menu = document.querySelector('#menu-hamburguer');
 const navItems = document.querySelector('#nav-items');
 const navLinks = document.querySelectorAll('#nav-items a');
-let controllersCarrossel; 
+let mainContainerComentarios;
 let itemsCarrossel;
 
 menu.addEventListener('click', showHideMenuItems);
 navLinks.forEach(link => link.addEventListener('click', showHideMenuItems));
 
-function showHideMenuItems (){
+function showHideMenuItems() {
     menu.classList.toggle('active');
     navItems.classList.toggle('active');
 }
@@ -36,26 +36,27 @@ function showHideMenuItems (){
 })();
 
 
-(function formatLocalDateTime(){
-    let segunda = new Date(Date.UTC(2012, 11, 17, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long'});
-    let sexta = new Date(Date.UTC(2012, 11, 21, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long'});
-    let sabado = new Date(Date.UTC(2012, 11, 22, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long'});
-    let domingo = new Date(Date.UTC(2012, 11, 23, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long'});
+(function formatLocalDateTime() {
+    let segunda = new Date(Date.UTC(2012, 11, 17, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long' });
+    let sexta = new Date(Date.UTC(2012, 11, 21, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long' });
+    let sabado = new Date(Date.UTC(2012, 11, 22, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long' });
+    let domingo = new Date(Date.UTC(2012, 11, 23, 5, 0, 0)).toLocaleDateString(undefined, { weekday: 'long' });
 
-    let horasAbertura = new Date('Mon Sep 19 2022 17:00:00 GMT-0300').toLocaleString(undefined, {hour: 'numeric'});
-    let horasFechamento = new Date('Mon Sep 19 2022 23:00:00 GMT-0300').toLocaleString(undefined, {hour: 'numeric'});
-    let horasAberturaFinalDeSemana = new Date('Mon Sep 19 2022 18:00:00 GMT-0300').toLocaleString(undefined, {hour: 'numeric'});
+    let horasAbertura = new Date('Mon Sep 19 2022 17:00:00 GMT-0300').toLocaleString(undefined, { hour: 'numeric' });
+    let horasFechamento = new Date('Mon Sep 19 2022 23:00:00 GMT-0300').toLocaleString(undefined, { hour: 'numeric' });
+    let horasAberturaFinalDeSemana = new Date('Mon Sep 19 2022 18:00:00 GMT-0300').toLocaleString(undefined, { hour: 'numeric' });
 
     renderLocalDateTime([
-        {diasSemana: [segunda,sexta],
-         diasFinalDeSemana: [sabado,domingo]
-        }, 
-        {horarios: [horasAbertura,horasFechamento,horasAberturaFinalDeSemana]}
+        {
+            diasSemana: [segunda, sexta],
+            diasFinalDeSemana: [sabado, domingo]
+        },
+        { horarios: [horasAbertura, horasFechamento, horasAberturaFinalDeSemana] }
     ]);
 })();
 
-function formatComentarios(data){
-    let itensCarrossel = Array.from({length: Math.ceil(data.length / 3)}, (e, i) => `<div class="spin carrossel-item${i === 0 ? " active" : ''} cr-${i}"></div>`);
+function formatComentarios(data) {
+    let itensCarrossel = Array.from({ length: Math.ceil(data.length / 3) }, (e, i) => `<div class="spin carrossel-item${i === 0 ? " active" : ''} cr-${i}"></div>`);
 
     let template = '';
     data.forEach((el, i) => {
@@ -70,9 +71,9 @@ function formatComentarios(data){
         </div>
         </div>`;
 
-        });
-        template = `<div class="comentarios-container flex">${template}</div>`
-        renderComentarios(template, itensCarrossel)
+    });
+    template = `<div class="comentarios-container flex">${template}</div>`
+    renderComentarios(template, itensCarrossel)
 }
 
 function renderComentarios(comentarios, carrossel) {
@@ -83,13 +84,13 @@ function renderComentarios(comentarios, carrossel) {
     carrossel.forEach(el => carrosselContainer.innerHTML += el);
 
     itemsCarrossel = document.querySelectorAll('.carrossel-item');
-    controllersCarrossel = document.querySelectorAll('.controller');
-    
+    mainContainerComentarios = document.querySelector('#main-container-comentarios');
+
     itemsCarrossel.forEach(item => item.addEventListener('click', moveCarousel))
-    controllersCarrossel.forEach(item => item.addEventListener('click', moveCarousel));
+    mainContainerComentarios.addEventListener('click', moveCarousel)
 }
 
-function renderLocalDateTime(data){
+function renderLocalDateTime(data) {
     let horas = `${data[1]['horarios'][0].length > 2 ? '' : 'h00'}`
 
     document.querySelector('.promocao-main-container article> :nth-child(3)>div:first-of-type p:first-of-type').textContent = `${data[0]['diasSemana'][0]} - ${data[0]['diasSemana'][1]}: ${data[1]['horarios'][0]}${horas} - ${data[1]['horarios'][1]}${horas}`;
@@ -107,12 +108,11 @@ function renderCardapio(data) {
         </div>
        <p class="info-prato opacity-ninety">${el.ingredients}</p> 
     </div>`;
-    document.querySelector('.cardapio-main-container article>div:nth-of-type(2) > div').innerHTML += template;
+        document.querySelector('.cardapio-main-container article>div:nth-of-type(2) > div').innerHTML += template;
     })
 }
 
 function moveCarousel(e) {
-    const mainContainerComentarios = document.querySelector('#main-container-comentarios');
     const containerC = document.querySelector('#container-c');
     const containerComentarios = document.querySelector('.comentarios-container');
     const comentarios = document.querySelector('.card-comentario');
@@ -120,33 +120,33 @@ function moveCarousel(e) {
     const currentCarouselItemActive = document.querySelector('.carrossel-item.active');
 
     const getCarouselItemNumber = (e) => Number(e.classList.toString().match(/\d/)[0])
-    
-    let currentCarouselItemActiveClass;  
-    if(carouselContainer){
+
+    let currentCarouselItemActiveClass;
+
+    if (carouselContainer) {
         currentCarouselItemActiveClass = getCarouselItemNumber(currentCarouselItemActive);
     }
 
     const maxWidth = containerC.offsetWidth - mainContainerComentarios.offsetWidth;
     const oneComment = comentarios.offsetWidth + parseFloat(window.getComputedStyle(containerComentarios).marginLeft);
-    const move =  oneComment * Math.floor(mainContainerComentarios.offsetWidth / oneComment);
+    const move = oneComment * Math.floor(mainContainerComentarios.offsetWidth / oneComment);
     const element = e.target;
 
-    if(element.classList.contains('controller')) {
+    if (e.path.indexOf(mainContainerComentarios) >= 0) {
+        const middle = mainContainerComentarios.offsetWidth / 2;
+        if (e.clientX > middle) mainContainerComentarios.scrollLeft < maxWidth ? (mainContainerComentarios.scrollLeft += move, currentCarouselItemActiveClass++) : (mainContainerComentarios.scrollLeft = 0, currentCarouselItemActiveClass = 0);
+        if (e.clientX < middle) mainContainerComentarios.scrollLeft > 0 ? (mainContainerComentarios.scrollLeft -= move, currentCarouselItemActiveClass--) : (mainContainerComentarios.scrollLeft = maxWidth, currentCarouselItemActiveClass = carouselContainer.childElementCount - 1);
 
-        
-        if(element.id === 'right') mainContainerComentarios.scrollLeft < maxWidth ? (mainContainerComentarios.scrollLeft += move, currentCarouselItemActiveClass++ ) : ( mainContainerComentarios.scrollLeft = 0, currentCarouselItemActiveClass = 0);
-        if(element.id === 'left') mainContainerComentarios.scrollLeft > 0 ? (mainContainerComentarios.scrollLeft -= move, currentCarouselItemActiveClass-- ): ( mainContainerComentarios.scrollLeft =  maxWidth, currentCarouselItemActiveClass = carouselContainer.childElementCount - 1);
-        
         const nextCarousel = document.querySelector(`.carrossel-item.cr-${currentCarouselItemActiveClass}`)
-        
-        if(nextCarousel) {
+
+        if (nextCarousel) {
             currentCarouselItemActive.classList.remove('active');
             nextCarousel.classList.add('active');
         }
-    
-    }else if(element.classList.contains('carrossel-item') && !element.classList.contains('active')){
 
-        mainContainerComentarios.scrollLeft = ( move * getCarouselItemNumber(element) );
+    } else if (element.classList.contains('carrossel-item') && !element.classList.contains('active')) {
+
+        mainContainerComentarios.scrollLeft = (move * getCarouselItemNumber(element));
 
         currentCarouselItemActive.classList.remove('active');
         element.classList.add('active');
