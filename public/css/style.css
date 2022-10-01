@@ -139,9 +139,18 @@ h3:not(#titulo-oferta-um),
     font-weight: 900;
 }
 
+.nav-social {
+    margin: 0 1.667em 0 5.556em;
+}
+
 .nav-social-logo {
     height: 1.313em;
     max-width: 1.5em;
+}
+
+.nav-social .spin{
+    height: 140%;
+    border-left: 1px solid rgb( 181, 11, 4);
 }
 
 .contact-btn {
@@ -160,10 +169,6 @@ h3:not(#titulo-oferta-um),
 
 .contact-btn img {
     margin-right: 0.444em;
-}
-
-.nav-social {
-    margin: 0 1.667em 0 5.556em;
 }
 
 .home-container {
@@ -505,8 +510,8 @@ h3:not(#titulo-oferta-um),
 }
 
 .comentarios-main-container article>div:nth-of-type(2){
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
   }
 
 
